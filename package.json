@@ -1,0 +1,57 @@
+{
+  "name": "tarojs-request",
+  "version": "1.0.0",
+  "description": "Taro network request library, based on koa-compose, use middleware to extend features.",
+  "license": "MIT",
+  "source": "src/index.ts",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "author": {
+    "name": "xushijie",
+    "email": "niubility.cool@gmail.com"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">= 14"
+  },
+  "files": [
+    "/lib",
+    "/es",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Niubility-Cool/tarojs-request.git"
+  },
+  "scripts": {
+    "clean": "rm -rf lib es",
+    "build:es": "tsc --module esnext --outDir es",
+    "build:lib": "tsc --module CommonJS --outDir lib",
+    "build-parallel": "run-p build:**",
+    "dev:es": "tsc --module esnext --outDir es --watch",
+    "dev:lib": "tsc --module CommonJS --outDir lib --watch",
+    "dev-parallel": "run-p dev:**",
+    "dev": "run-s -ln clean dev-parallel",
+    "build": "run-s -ln clean build-parallel"
+  },
+  "devDependencies": {
+    "@tarojs/taro": "^3.4.0",
+    "@types/koa-compose": "^3.2.5",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "npm-run-all": "~4.1.5",
+    "prettier": "^2.5.1",
+    "typescript": ">=3.0.0"
+  },
+  "peerDependencies": {
+    "@tarojs/taro": "^3.4.0"
+  },
+  "dependencies": {
+    "abort-controller": "^3.0.0",
+    "koa-compose": "^4.1.0"
+  }
+}
